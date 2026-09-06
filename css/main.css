@@ -1,0 +1,57 @@
+:root {
+    --primary-color : rgb(91, 185, 14);
+    --link-color : #C1C1C1;
+}
+
+main, body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100vw;
+    /* min-height: 100vh; */
+    /* min-height: var(--app-height); */
+    height: auto;
+    background: #0B1518;
+    color: var(--primary-color);
+    /* font-size: 1vw; */
+    position: relative;
+    font-weight: 400;
+    line-height: 1.2;
+    opacity: 1;
+    /* overflow-x: hidden;
+    -webkit-transition: overflow 0.3s,opacity 0.3s 4s;
+    -moz-transition: overflow 0.3s,opacity 0.3s 4s;
+    -ms-transition: overflow 0.3s,opacity 0.3s 4s;
+    -o-transition: overflow 0.3s,opacity 0.3s 4s;
+    transition: overflow 0.3s,opacity 0.3s 4s; */
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+header {
+    height: auto;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 9;
+    -webkit-transition: top 0.3s 0s ease-out;
+    -moz-transition: top 0.3s 0s ease-out;
+    -o-transition: top 0.3s 0s ease-out;
+    transition: top 0.3s 0s ease-out;
+    padding-top: 1.25vw;
+}
+
+.contentWrapper {
+    position: relative;
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 12.5vw;
+    margin-bottom: 0;
+}
+
+.title {
+    padding-top: 40vh;
+}
