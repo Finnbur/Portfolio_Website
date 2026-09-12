@@ -1,16 +1,17 @@
 :root {
-    --primary-color : rgb(91, 185, 14);
+    --primary-color : #FFCD00;
     --link-color : #C1C1C1;
+    --background-color : #0B1518;
 }
 
-main, body {
+html, body {
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
     width: 100vw;
     /* min-height: 100vh; */
     /* min-height: var(--app-height); */
     height: auto;
-    background: #0B1518;
+    background: var(--background-color);
     color: var(--primary-color);
     /* font-size: 1vw; */
     position: relative;
@@ -23,6 +24,7 @@ main, body {
     -ms-transition: overflow 0.3s,opacity 0.3s 4s;
     -o-transition: overflow 0.3s,opacity 0.3s 4s;
     transition: overflow 0.3s,opacity 0.3s 4s; */
+    scroll-behavior: smooth;
 }
 
 a {
@@ -31,11 +33,13 @@ a {
 }
 
 header {
+    background-color: var(--background-color);
     height: auto;
     left: 0;
     position: fixed;
     top: 0;
     width: 100vw;
+    padding-bottom: 8px;
     z-index: 9;
     -webkit-transition: top 0.3s 0s ease-out;
     -moz-transition: top 0.3s 0s ease-out;
@@ -54,4 +58,5 @@ header {
 
 .title {
     padding-top: 40vh;
+    height: 100vh;
 }
