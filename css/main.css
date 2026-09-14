@@ -1,7 +1,7 @@
 :root {
     --primary-color : #FFCD00;
     --link-color : #C1C1C1;
-    --background-color : #0B1518;
+    --background-color : #091214;
 }
 
 html, body {
@@ -33,7 +33,7 @@ a {
 }
 
 header {
-    background-color: var(--background-color);
+    background-image: linear-gradient(to bottom, var(--background-color), transparent);
     height: auto;
     left: 0;
     position: fixed;
@@ -48,10 +48,44 @@ header {
     padding-top: 1.25vw;
 }
 
+.nav {
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    /* padding-left: 8%; */
+    padding-right: 8%;
+    justify-content: right;
+    gap: 2.5vw;
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 0.4rem;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: left 0.3s ease, width 0.3s ease;
+}
+
 .contentWrapper {
     position: relative;
     padding-top: 0;
     margin-top: 0;
+    padding-left: 8%;
     padding-bottom: 12.5vw;
     margin-bottom: 0;
 }
