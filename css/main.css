@@ -92,5 +92,87 @@ header {
 
 .title {
     padding-top: 40vh;
-    height: 100vh;
+    height: 80vh;
+}
+
+/* projects */
+.projecten {
+    padding-top: 10px;
+}
+.contentWrapper {
+    padding-right: 8%;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6vw;
+}
+
+.project-item {
+    display: flex;
+    align-items: stretch;
+    min-height: 85vh;
+    gap: 4vw;
+}
+
+.project-item > div {
+    flex: 1 1 50%;
+    width: 50%;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.project-info h3 {
+    font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+    margin: 0;
+}
+
+.project-info p {
+    color: var(--link-color);
+    line-height: 1.5;
+}
+
+.project-link {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+    border-bottom: 1px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.project-link:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.project-image {
+    display: flex;
+    align-items: center;      /* centers the image vertically in the stretched half */
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;              /* let the image keep its natural ratio */
+    max-height: 100%;          /* still won't overflow the row's height */
+    object-fit: contain;       /* safety net if max-height ever kicks in */
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        flex-direction: column;
+        min-height: auto;
+        gap: 1.5rem;
+    }
+    .project-item > div {
+        width: 100%;
+    }
+    .project-image img {
+        max-height: 50vh;
+    }
 }
