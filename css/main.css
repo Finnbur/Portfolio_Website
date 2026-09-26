@@ -25,6 +25,7 @@ html, body {
     -o-transition: overflow 0.3s,opacity 0.3s 4s;
     transition: overflow 0.3s,opacity 0.3s 4s; */
     scroll-behavior: smooth;
+    transition: color 0.4s ease;
 }
 
 a {
@@ -78,7 +79,7 @@ header {
     width: 0;
     height: 2px;
     background: var(--primary-color);
-    transition: left 0.3s ease, width 0.3s ease;
+    transition: left 0.3s ease, width 0.3s ease, background-color 0.4s ease;
 }
 
 .contentWrapper {
@@ -112,7 +113,7 @@ header {
 .project-item {
     display: flex;
     align-items: stretch;
-    min-height: 85vh;
+    min-height: 70vh;
     gap: 4vw;
 }
 
@@ -158,9 +159,11 @@ header {
 
 .project-image img {
     width: 100%;
-    height: auto;              /* let the image keep its natural ratio */
-    max-height: 100%;          /* still won't overflow the row's height */
-    object-fit: contain;       /* safety net if max-height ever kicks in */
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 23px 16px 18px 1px rgba(0, 0, 0, 0.47);
+    border-radius: 8px;
 }
 
 @media (max-width: 768px) {
@@ -174,5 +177,14 @@ header {
     }
     .project-image img {
         max-height: 50vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html, body,
+    .nav-indicator,
+    .nav-link,
+    .project-link {
+        transition: none;
     }
 }
