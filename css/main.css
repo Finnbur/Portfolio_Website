@@ -1,31 +1,34 @@
+@property --primary-color {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #FFCD00;
+}
+
+@property --background-color {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #091214;
+}
+
 :root {
-    --primary-color : #FFCD00;
-    --link-color : #C1C1C1;
-    --background-color : #091214;
+    --primary-color: #FFCD00;
+    --link-color: #C1C1C1;
+    --background-color: #091214;
 }
 
 html, body {
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
     width: 100vw;
-    /* min-height: 100vh; */
-    /* min-height: var(--app-height); */
     height: auto;
-    background: var(--background-color);
+    background: linear-gradient(105deg, var(--background-color) 0%, color-mix(in srgb, var(--primary-color), var(--background-color) 90%) 70%);
     color: var(--primary-color);
-    /* font-size: 1vw; */
     position: relative;
     font-weight: 400;
     line-height: 1.2;
     opacity: 1;
-    /* overflow-x: hidden;
-    -webkit-transition: overflow 0.3s,opacity 0.3s 4s;
-    -moz-transition: overflow 0.3s,opacity 0.3s 4s;
-    -ms-transition: overflow 0.3s,opacity 0.3s 4s;
-    -o-transition: overflow 0.3s,opacity 0.3s 4s;
-    transition: overflow 0.3s,opacity 0.3s 4s; */
     scroll-behavior: smooth;
-    transition: color 0.4s ease;
+    transition: color 0.4s ease, --primary-color 0.4s ease, --background-color 0.4s ease;
 }
 
 a {
@@ -34,19 +37,29 @@ a {
 }
 
 header {
-    background-image: linear-gradient(to bottom, var(--background-color), transparent);
-    height: auto;
-    left: 0;
     position: fixed;
+    left: 0;
     top: 0;
     width: 100vw;
-    padding-bottom: 8px;
     z-index: 9;
+    padding-top: 1.25vw;
+    padding-bottom: 8px;
     -webkit-transition: top 0.3s 0s ease-out;
     -moz-transition: top 0.3s 0s ease-out;
     -o-transition: top 0.3s 0s ease-out;
     transition: top 0.3s 0s ease-out;
-    padding-top: 1.25vw;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh; /* however long you want the fade to take — increase for a slower fade */
+    background-image: linear-gradient(to bottom, var(--background-color), transparent);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .nav {
@@ -134,13 +147,18 @@ header {
     margin: 0;
 }
 
+.project-info span {
+    color: #949393;
+}
+
 .project-info p {
     color: var(--link-color);
     line-height: 1.5;
+    margin-bottom: 2px;
 }
 
 .project-link {
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
     align-self: flex-start;
     border-bottom: 1px solid transparent;
     transition: color 0.25s ease, border-color 0.25s ease;
@@ -162,7 +180,6 @@ header {
     height: auto;
     max-height: 100%;
     object-fit: contain;
-    box-shadow: 23px 16px 18px 1px rgba(0, 0, 0, 0.47);
     border-radius: 8px;
 }
 
@@ -186,5 +203,95 @@ header {
     .nav-link,
     .project-link {
         transition: none;
+    }
+}
+
+/* image slideshow */
+.project-slideshow {
+    position: relative;
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 23px 16px 18px 1px rgba(0, 0, 0, 0.47);
+}
+
+.slideshow-track {
+    display: grid; /* stacks all slides in the same cell */
+}
+
+.slideshow-track .slide {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.slideshow-track .slide.active { opacity: 1; }
+
+.slide-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(9, 18, 20, 0.719);
+    color: var(--link-color);
+    border: none;
+    border-radius: 8px;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease;
+}
+
+.slide-nav:hover { background: rgba(9, 18, 20, 0.9); }
+.slide-prev { left: 0.3rem; }
+.slide-next { right: 0.3rem; }
+
+.slide-dots {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.4rem;
+}
+
+.slide-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--link-color);
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.slide-dots .dot.active { background: var(--primary-color); }
+
+
+@media (max-width: 768px) {
+    .project-item {
+        flex-direction: column;
+        min-height: auto;
+        gap: 1.5rem;
+    }
+    .project-item > div {
+        width: 100%;
+    }
+    .project-info {
+        order: 1;
+    }
+    .project-image {
+        order: 2;
+    }
+    .project-image img {
+        max-height: 50vh;
     }
 }
