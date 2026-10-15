@@ -145,7 +145,7 @@ $(function () {
     const projects = [
         { 
             title: 'GamePlanner', 
-            languages: '#Twig, #SCSS, #PHP, #MySQL, #JS(jQeury), #Ajax',
+            languages: '#Twig, #SCSS, #PHP, #MySQL, #JS(jQeury), #Ajax, #Framework',
             text: 'GamePlanner is een gamified huishoudplanner, je voltooit taken om punten te verdienen, die je kan inwisselen voor mini-games. Het project is gebouwd door een team van web en game developers. Mijn rol was de backend, een eigen PHP framework en de styling van de website, inclusief alle SVG-iconen heb ik ontworpen.',
             image: 'img/gamePlanner', 
             imageAlt: 'GamePlanner preview', 
@@ -156,7 +156,7 @@ $(function () {
         { 
             title: 'Escapetalk', 
             languages: '#Twig, #SCSS, #PHP, #Bitbucket, #JavaScript, #Ajax',
-            text: 'Information about Escapetalk.', 
+            text: 'Escapetalk is een platform waar je escaperooms kan ontdekken, reviewen en opslaan. Tijdens mijn stage in het tweede jaar heb ik filters en de zoekfunctie verbeterd, waarbij ik veel met SQL heb gewerkt. Daarnaast heb ik met PHP functionaliteiten ontwikkeld voor de beheeromgeving binnen hun eigen CMS.',
             image: 'img/escapetalk', 
             imageAlt: 'Escapetalk preview', 
             websiteLink: 'https://escapetalk.nl', 
@@ -165,7 +165,8 @@ $(function () {
         },
         { 
             title: 'Coincap', 
-            text: 'Information about Coincap.', 
+            languages: '#Mustache, #JS(jQeury), #Ajax, #CSS, #PHP, #Github #Bootstrap',
+            text: "Coincap is een website waarop je de live prijzen van cryptomunten kan bekijken en je eigen aankopen kan bijhouden, inclusief de aankoopprijs. Dit project was bedoeld om mijn kennis van JavaScript uit te breiden en ervaring op te doen met API's. De website maakt gebruik van drie verschillende API's die gegevens met elkaar combineren. Deze data wordt opgehaald en verwerkt via AJAX-calls.",
             image: 'img/coinCap', 
             imageAlt: 'Coincap preview', 
             githubLink: 'https://github.com/Finnbur/Coin-cap', 
@@ -174,7 +175,8 @@ $(function () {
         },
         { 
             title: 'Guess the number', 
-            text: 'Information about Guess the number.', 
+            languages: '#PHP, #OOP, #MVC #Github #Bootstrap',
+            text: 'Guess the Number is een spel waarbij je binnen een bepaalde tijd en met een beperkt aantal pogingen het juiste getal moet raden. Dit was het eerste project waarin ik veel met OOP en MVC heb gewerkt. Daarnaast heb ik veel gebruikgemaakt van sessies om de spelgegevens bij te houden.',
             image: 'img/guessTheNumber', 
             imageAlt: 'Guess the number preview', 
             githubLink: 'https://github.com/Finnbur/guess-the-number', 
@@ -183,7 +185,8 @@ $(function () {
         },
         { 
             title: 'Dungeons & Monsters', 
-            text: 'Information about Dungeons & Monsters.', 
+            languages: '#PHP, #MySQL, #JSON, #CSS, #JS, #Github',
+            text: "DnM is een online platform voor Dungeons & Dragons waarmee spelers hun personages en campaigns kunnen aanmaken en beheren. Daarnaast biedt het platform spelregels en andere hulpmiddelen. Dit is een ouder project waarin ik heb geleerd hoe ik een uitgebreide database kan ontwerpen en structureren, met functionaliteiten zoals character creation, campaign creation en het beheren van verschillende classes en races.",
             image: 'img/DNM', 
             imageAlt: 'Dungeons and Monsters preview', 
             githubLink: 'https://github.com/IvyOwO06/dnd_above_and_beyond', 
